@@ -62,6 +62,7 @@
 	}
 </script>
 
+<!-- render iframe based on component props -->
 <iframe
 	{title}
 	aria-label={aria_label}

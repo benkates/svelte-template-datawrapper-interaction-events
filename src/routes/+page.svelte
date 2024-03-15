@@ -8,7 +8,8 @@
 <h1>SvelteKit Template for Datawrapper Interaction Events</h1>
 
 <DatawrapperIframe
-	title="Share of people using the internet by country"
+	title="Unemployment in the US by county"
+	aria-label="Choropleth map of US counties showing unemployment rates"
 	datawrapper_id="BfNT0"
 	on:regionclick={(e) => {
 		console.log(e.detail.data); //TODO: remove before production use
