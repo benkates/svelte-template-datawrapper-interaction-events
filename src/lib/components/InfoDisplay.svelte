@@ -28,3 +28,7 @@
 	<p><b>{d.label}:</b> {comma($lookupData[d.var])}</p>
 {/each}
 <span>*Data for 2022</span>
+
+<style>
+	/* CSS goes here */
+</style>

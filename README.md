@@ -1,22 +1,29 @@
-# create-svelte
+# SvelteKit Template for Datawrapper Interaction Events
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+The purpose of this template repository is to get you started with a SvelteKit project that captures Datawrapper chart interaction events and uses a data key to display information from a lookup dataset.
 
-## Creating a project
+If you're unfamiliar with this workflow, check out the following documentation:
 
-If you're seeing this, you've probably already done this step. Congrats!
+- [Svelte Interactive Tutorial](https://learn.svelte.dev/tutorial/welcome-to-svelte)
+- [SvelteKit Documentation](https://kit.svelte.dev)
+- [Datawrapper: Listening to Chart Interaction Events](https://developer.datawrapper.de/docs/listening-to-chart-interaction-events)
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Project structure and key files (`.src/`)
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+- `data/data.json`: A sample dataset to use as a lookup table.
+- `lib/stores.js`: Writable/readable stores to capture/display information. These are named `selectedKey` and `lookupData`.
+- `lib/components/DatawrapperIframe.svelte`: A Svelte component that wraps the Datawrapper iframe and listens to interaction events. Define which events are dispatched here.
+- `lib/components/InfoDisplay.svelte`: A Svelte component that displays the information from the lookup dataset.
+- `lib/utils/events.js`: Utility script for attaching interaciton event listeners to Datawrapper charts. Copied and slightly modified from the [Datawrapper documentation](https://developer.datawrapper.de/docs/listening-to-chart-interaction-events).
+- `routes/+page.svelte`: The parent page for the application.
+
+### Project Settings
+
+[JSDoc for type checking](https://github.com/jsdoc/jsdoc) and [Prettier for code formatting](https://prettier.io/) are enabled by default.
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Install dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
 ```bash
 npm run dev
@@ -24,15 +31,3 @@ npm run dev
 # or start the server and open the app in a new browser tab
 npm run dev -- --open
 ```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
